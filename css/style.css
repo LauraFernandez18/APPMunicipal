@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    background-color: red;
+    text-align: center;
+    padding: 2%;
+}
