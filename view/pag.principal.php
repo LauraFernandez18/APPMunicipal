@@ -1,3 +1,9 @@
+<?php
+include '../services/config.php';
+include '../services/conexion.php';
+$sentencia=$pdo->prepare("SELECT * FROM tbl_eventos");
+$sentencia->execute();
+$eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,43 @@
     <title>Eventos disponibles</title>
 </head>
 <body>
-    <h1>Eventos disponibles</h1>
+<table class="table table">
+    <tr>
+    <th>Evento</th>
+    <th>Descripción</th>
+    <th>Lugar</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Eliminar</th>
+    <th>Modificar</th>
+    </th>
+<?php
+    foreach ($eventos as $producto){
+        ?>
+        <tr>
+        <td><?php echo"{$producto['nom_evento']}";?></td>
+        <td><?php echo"{$producto['desc_evento']}";?></td>
+        <td><?php echo"{$producto['lugar_evento']}";?></td>
+        <td><?php echo"{$producto['fecha_evento']}";?></td>
+        <td><?php echo"{$producto['hora_evento']}";?></td>
+        <form METHOD='GET' action='eliminar.php'>
+            <input type='hidden' name='eliminacion' value=<?php echo"{$producto['id_evento']}";?>>
+            <td><input type='submit' value='Eliminar' onclick="return confirm('Quieres Eliminar?')"class="btn btn-danger"></td>
+        </form>
+        <form METHOD='POST' action='modificar.php'>
+        <input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>>
+        <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
+        <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
+        <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
+        <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
+            <input type='hidden' name='modificar' value=<?php echo"{$producto['id_evento']}";?>>
+            <td><input type='submit' value='Modificar' onclick="return confirm('Quieres Modificar?')"class="btn btn-success"></td>
+        </form>
+        </tr>
+    <?php 
+    }
+     ?>
+    </table>
 
 </body>
 </html>
