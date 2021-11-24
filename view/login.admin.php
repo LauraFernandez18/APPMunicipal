@@ -22,8 +22,8 @@
         session_destroy();
         ?></div>
         <form class="caja" action='../processes/login.proc.php' method='POST' onsubmit="return validar()">
-        <input type='nom_user' name='nom_user' id='nom_user' placeholder="Username"/><br><br>
-        <input type='password' name='password_user' id='password_user' placeholder="Contraseña"/><br><br>
+        <input type='email_usuario' name='email_usuario' id='email_usuario' placeholder="Email"/><br><br>
+        <input type='pass_usuario' name='pass_usuario' id='pass_usuario' placeholder="Contraseña"/><br><br>
         <INPUT TYPE='SUBMIT' NAME='crear' VALUE='Iniciar sesión' class="btn btn-dark btn_login">
 </input>
         </form>
