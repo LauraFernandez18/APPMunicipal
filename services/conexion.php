@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once("config.php");
  $servidor="mysql:dbname=".BD.";host=";SERVIDOR;
  try{
