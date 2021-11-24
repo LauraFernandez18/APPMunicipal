@@ -33,7 +33,7 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <td><?php echo"{$producto['lugar_evento']}";?></td>
         <td><?php echo"{$producto['fecha_evento']}";?></td>
         <td><?php echo"{$producto['hora_evento']}";?></td>
-        <form METHOD='POST' action='modificar.php'>
+        <form METHOD='POST' action='inscription.principal.php'>
             <input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
             <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
