@@ -1,8 +1,3 @@
-<?php
- if(isset($_GET['id'])){
-    echo "<script> alert('El usuario ya existe')</script>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +14,7 @@
     <th>Email</th>
     <th>Nombre</th>
     <th>Apellido</th>
-    <th>Edad</th>
+    <th>Telefono</th>
     <th>DNI</th>
     </th>
         <tr>
@@ -27,9 +22,8 @@
             <td><input type='email' name='email' ></td>
             <td><input type='text' name='nombre' ></td>
             <td><input type='text' name='apellido' ></td>
-            <td><input type='number' name='edad' ></td>
+            <td><input type='number' name='telef' ></td>
             <td><input type='text' name='dni' ></td>
-            <input type='hidden' name='crear' value='CREATE'>
             <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
             <td><input type='submit' value='Completar inscripcion' class="btn btn-success"></td>
         </form>
