@@ -7,7 +7,7 @@
         $idEvent=$_POST['id'];
         $mail=$_POST['email'];
         echo $mail;
-        echo $idEvent;
+        //echo $idEvent;
         //comprobación de si el email está registrado mediante PDO
         $sentencia=$pdo->prepare("SELECT COUNT(*) from tbl_usuarios where email_usuario= :u ");
         $sentencia->execute(array(":u" => $mail));
@@ -28,19 +28,25 @@
             $stmt->bindParam(5, $_POST['dni']);
             // Excecute
             $stmt->execute();
+            $test='Paco11111@gmail.com';
             /*------------------------------------------------------------------------------------------------------------------*/
             //recogemos el id del usuario previamente creado
-            $sql ="SELECT id_usuario FROM tbl_usuarios WHERE email_usuario==".$mail."";
-            $idUser = $pdo->query($sql);
+            $sentencia = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE email_usuario like ?");
+            $sentencia->bindParam(1, $mail);
+            $sentencia->execute();
+            $arrDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+             //Leer variable con los datos
+            foreach ($arrDatos as $value) {
             //registramos al usuario en el evento
             $event = $pdo->prepare("INSERT INTO tbl_inscripciones (id_evento, id_usuario, fecha_inscripcion, hora_inscripcion) VALUES (?, ?, CURDATE(),CURTIME())");
              // Bind
             $event->bindParam(1, $idEvent);
-            $event->bindParam(2, $idUser);
+            $event->bindParam(2, $value['id_usuario']);
             // Excecute
             $event->execute();
+            }  
             echo "<script> alert('Registro completado')</script>";
-            echo"<script>window.location.replace('../view/pag.principal')</script>";
+            echo"<script>window.location.replace('../view/pag.principal.php')</script>";
             }
         }
 ?>
