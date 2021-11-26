@@ -9,4 +9,3 @@ require_once("config.php");
     echo "<script> alert('Error de conexion')</script>";
  }
  ?>
-
