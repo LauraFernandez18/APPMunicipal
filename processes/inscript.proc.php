@@ -1,9 +1,12 @@
 <?php
     include '../services/config.php';   
     include '../services/conexion.php';
+    //si el usuario ya esta creado
     if(isset($_POST['already'])){
         echo "si";
-    }else{
+    }
+    //si el usuario no esta creado
+    else{
         $idEvent=$_POST['id'];
         $mail=$_POST['email'];
         echo $mail;
@@ -28,7 +31,6 @@
             $stmt->bindParam(5, $_POST['dni']);
             // Excecute
             $stmt->execute();
-            $test='Paco11111@gmail.com';
             /*------------------------------------------------------------------------------------------------------------------*/
             //recogemos el id del usuario previamente creado
             $sentencia = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE email_usuario like ?");
@@ -36,15 +38,15 @@
             $sentencia->execute();
             $arrDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
              //Leer variable con los datos
-            foreach ($arrDatos as $value) {
+             //$arrDatos[0]['id_usuario'];
             //registramos al usuario en el evento
             $event = $pdo->prepare("INSERT INTO tbl_inscripciones (id_evento, id_usuario, fecha_inscripcion, hora_inscripcion) VALUES (?, ?, CURDATE(),CURTIME())");
              // Bind
             $event->bindParam(1, $idEvent);
-            $event->bindParam(2, $value['id_usuario']);
+            $event->bindParam(2, $arrDatos[0]['id_usuario']);
             // Excecute
             $event->execute();
-            }  
+            
             echo "<script> alert('Registro completado')</script>";
             echo"<script>window.location.replace('../view/pag.principal.php')</script>";
             }
