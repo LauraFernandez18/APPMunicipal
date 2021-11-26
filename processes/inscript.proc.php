@@ -43,6 +43,7 @@
             $event = $pdo->prepare("INSERT INTO tbl_inscripciones (id_evento, id_usuario, fecha_inscripcion, hora_inscripcion) VALUES (?, ?, CURDATE(),CURTIME())");
              // Bind
             $event->bindParam(1, $idEvent);
+
             $event->bindParam(2, $arrDatos[0]['id_usuario']);
             // Excecute
             $event->execute();
