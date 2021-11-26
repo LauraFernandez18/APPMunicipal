@@ -16,6 +16,7 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 </head>
 <body>
 <div class="row">
+<div class="pag_principal">
 <div class='iniciar_sesion'>
 <a href='../processes/login.proc.php'>Iniciar sesión</a><br>
 </div>
@@ -34,20 +35,21 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <p><?php echo"{$producto['lugar_evento']}";?><p>
         <p><?php echo"{$producto['fecha_evento']}";?><p>
         <p><?php echo"{$producto['hora_evento']}";?><p>
-        <input type='submit' value='Inscribete' class="btn btn-success">
     </div>
-        <form METHOD='POST' action='modificar.php'>
+        <form METHOD='POST' action='inscription.principal.php'>
             <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
             <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
             <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
             <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
+            <input type='submit' value='Inscribete' class="btn btn-success">
         </form>
         </div>
     <?php 
     }
      ?>
+</div>
 </div>
 </body>
 </html>

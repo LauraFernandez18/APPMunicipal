@@ -11,24 +11,15 @@
 </head>
 
 <body>
-<div class="row">
     <div class="login">
         <h1>Login</h1><br>
-        <div class=alert id='mensaje'><?php
-        session_start();
-        if (isset($_SESSION['error'])){
-            echo "<p>Usuario y/o contraseña incorrectos<p>";
-        }
-        session_destroy();
-        ?></div>
-        <form class="caja" action='../processes/login.proc.php' method='POST' onsubmit="return validar()">
-        <input type='email_usuario' name='email_usuario' id='email_usuario' placeholder="Email"/><br><br>
+        <div class=alert id='mensaje'></div>
+        <form action='../processes/login.proc.php' method='POST' onsubmit="return validar();">
+        <input type='email' name='email_usuario' id='email_usuario' placeholder="Email"/><br><br>
         <input type='pass_usuario' name='pass_usuario' id='pass_usuario' placeholder="Contraseña"/><br><br>
         <INPUT TYPE='SUBMIT' NAME='crear' VALUE='Iniciar sesión' class="btn btn-dark btn_login">
 </input>
         </form>
-
-</div>
 </div>
 
 </body>
