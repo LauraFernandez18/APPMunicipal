@@ -1,6 +1,6 @@
 <?php 
-require_once("conexion.php");
-if (isset($_POST['nom_user']) && isset($_POST['password_user'])) {
+
+if (isset($_POST['email_usuario']) && isset($_POST['pass_usuario'])) {
     require_once '../services/conexion.php';
     $email_usuario=$_POST['email_usuario'];
     $pass_usuario=$_POST['pass_usuario'];
