@@ -3,7 +3,28 @@
     include '../services/conexion.php';
     //si el usuario ya esta creado
     if(isset($_POST['already'])){
-        echo "si";
+        $sentencia=$pdo->prepare("SELECT COUNT(*) from tbl_usuarios where email_usuario= :u and  dni_usuario= :i");
+        $sentencia->execute(array(":u" => $mail,":i" => $dni));
+        if($sentencia->fetchColumn() < 0){
+            echo "<script> alert('No se encuentra ninguna cuenta asociada')</script>";
+            echo"<script>window.location.replace('../view/inscription.principal.already.php?id=".$idEvent."')</script>";
+        }else{
+            $sentencia = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE email_usuario like ?");
+            $sentencia->bindParam(1, $mail);
+            $sentencia->execute();
+            $arrDatos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+             //Leer variable con los datos
+             //$arrDatos[0]['id_usuario'];
+            //registramos al usuario en el evento
+            $event = $pdo->prepare("INSERT INTO tbl_inscripciones (id_evento, id_usuario, fecha_inscripcion, hora_inscripcion) VALUES (?, ?, CURDATE(),CURTIME())");
+             // Bindeamos los parametros a los ?
+            $event->bindParam(1, $idEvent);
+            $event->bindParam(2, $arrDatos[0]['id_usuario']);
+            // Excecute
+            $event->execute();
+            echo "<script> alert('Registro completado')</script>";
+            echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+        }
     }
     //si el usuario no esta creado
     else{

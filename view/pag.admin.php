@@ -36,14 +36,32 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <p><?php echo"{$producto['fecha_evento']}";?><p>
         <p><?php echo"{$producto['hora_evento']}";?><p>
     </div>
-        <form METHOD='POST' action='inscription.principal.php'>
+        <form METHOD='POST' action='../processes/atualizar.proc.php'>
             <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
             <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
             <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
             <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
-            <input type='submit' value='Inscribete' class="btn btn-success">
+            <input type='submit' value='Actualizar' class="btn btn-success">
+        </form>
+        <form METHOD='POST' action='registered.admin.php'>
+            <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
+            <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
+            <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
+            <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
+            <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
+            <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
+            <input type='submit' value='Registrados' class="btn btn-warning">
+        </form>
+        <form METHOD='POST' action='../processes/delete.proc.php'>
+            <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
+            <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
+            <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
+            <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
+            <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
+            <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
+            <input type='submit' value='Borrar' class="btn btn-danger">
         </form>
         </div>
     <?php 
