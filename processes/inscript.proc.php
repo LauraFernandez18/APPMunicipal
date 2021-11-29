@@ -68,7 +68,7 @@
             $event->bindParam(2, $arrDatos[0]['id_usuario']);
             // Excecute
             $event->execute();
-            
+            //nos envia a de nuevo a la pagina principal 
             echo "<script> alert('Registro completado')</script>";
             echo"<script>window.location.replace('../view/pag.principal.php')</script>";
             }
