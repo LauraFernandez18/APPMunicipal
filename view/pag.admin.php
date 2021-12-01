@@ -17,26 +17,36 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 <body>
 <div class="row">
 <div class="pag_principal">
-<div class='iniciar_sesion'>
-<a href='../processes/login.proc.php'>Iniciar sesión</a><br>
-</div>
-<h1>Eventos disponibles</h1>
+<h1>Administración de eventos</h1>
+<td><a type='button' class='btn btn-primary'  href="crear.form.php">Crear</a></td>
 <br></br>
+                <table class="table">
+                <tr>
+                    <th>Nombre evento</th>
+                    <th>Descripción evento</th>
+                    <th>Lugar evento</th>
+                    <th>Fecha evento</th>
+                    <th>Hora evento</th>
+                    <th>Imagen</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
 <?php
     foreach ($eventos as $producto){
         ?>
-        <div class="seccion">
-        <h2><?php echo"{$producto['nom_evento']}";?></h2>
-        <div class="column1">
-        <img src="../img/ciclismo.jpg">
-        </div>
-        <div class="column2">
-        <?php echo"{$producto['desc_evento']}";?>
-        <p><?php echo"{$producto['lugar_evento']}";?><p>
-        <p><?php echo"{$producto['fecha_evento']}";?><p>
-        <p><?php echo"{$producto['hora_evento']}";?><p>
-    </div>
-        <form METHOD='POST' action='inscription.principal.php'>
+        <tr>
+        <td><?php echo"{$producto['nom_evento']}";?></td>
+        <td><?php echo"{$producto['desc_evento']}";?></td>
+        <td><?php echo"{$producto['lugar_evento']}";?></td>
+        <td><?php echo"{$producto['fecha_evento']}";?></td>
+        <td><?php echo"{$producto['hora_evento']}";?></td>
+        <td><img src="../img/ciclismo.jpg"></td>
+        <?php
+        echo "<td><a type='button' class='btn btn-success'  href='modificar.form.php?id={$producto['id_evento']}&nom_evento={$producto['nom_evento']}&desc_evento={$producto['desc_evento']}&lugar_evento={$producto['lugar_evento']}&fecha_evento={$producto['fecha_evento']}&hora_evento={$producto['hora_evento']}'>Modificar</a></td>";
+        echo "<td><a type='button' class='btn btn-danger' href='../processes/delete.proc.php'>Delete</a></td>";
+        ?>
+    </tr>
+        <!-- <form METHOD='POST' action='inscription.principal.php'>
             <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
             <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
@@ -44,11 +54,11 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
             <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
             <input type='submit' value='Inscribete' class="btn btn-success">
-        </form>
-        </div>
+        </form> -->
     <?php 
     }
      ?>
+     </table>
 </div>
 </div>
 </body>
