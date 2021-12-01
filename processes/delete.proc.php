@@ -21,7 +21,6 @@
             $del->execute();
 
             echo "<script> alert('El evento ha sido borrado con exito')</script>";
-            //echo"<script>window.location.replace('../view/pag.admin.php')</script>";
+            echo"<script>window.location.replace('../view/pag.admin.php')</script>";
         }
     ?>
-

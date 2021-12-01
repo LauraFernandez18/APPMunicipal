@@ -25,17 +25,13 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 <?php
     foreach ($eventos as $producto){
         ?>
-        <div class="seccion">
+        <div class="evento">
         <h2><?php echo"{$producto['nom_evento']}";?></h2>
-        <div class="column1">
         <img src="../img/ciclismo.jpg">
-        </div>
-        <div class="column2">
         <?php echo"{$producto['desc_evento']}";?>
         <p><?php echo"{$producto['lugar_evento']}";?><p>
         <p><?php echo"{$producto['fecha_evento']}";?><p>
         <p><?php echo"{$producto['hora_evento']}";?><p>
-    </div>
         <form METHOD='POST' action='inscription.principal.php'>
             <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
@@ -45,7 +41,9 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
             <input type='submit' value='Inscribete' class="btn btn-success">
         </form>
+        <br></br>
         </div>
+    </div>
     <?php 
     }
      ?>
