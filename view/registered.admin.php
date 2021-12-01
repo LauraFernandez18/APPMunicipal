@@ -22,17 +22,9 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 <?php
     foreach ($eventos as $producto){
         ?>
-        <div class="seccion">
-        <h2><?php echo"{$producto['nom_evento']}";?></h2>
-        <div class="column1">
-        <img src="../img/ciclismo.jpg">
-        </div>
-        <div class="column2">
-        <?php echo"{$producto['desc_evento']}";?>
         <p><?php echo"{$producto['lugar_evento']}";?><p>
         <p><?php echo"{$producto['fecha_evento']}";?><p>
         <p><?php echo"{$producto['hora_evento']}";?><p>
-        </div>
     <?php 
     }
      ?>

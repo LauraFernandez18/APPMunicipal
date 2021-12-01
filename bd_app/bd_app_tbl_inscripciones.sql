@@ -26,14 +26,14 @@ CREATE TABLE `tbl_inscripciones` (
   `id_inscripcion` int NOT NULL AUTO_INCREMENT,
   `id_evento` int DEFAULT NULL,
   `id_usuario` int DEFAULT NULL,
-  `fecha_inscripcion` date DEFAULT NULL,
-  `hora_inscripcion` time DEFAULT NULL,
+  `fecha_inscripcion` varchar(50) DEFAULT NULL,
+  `hora_inscripcion` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_inscripcion`),
   KEY `fk_inscripcion_usuarios_idx` (`id_usuario`),
   KEY `fk_inscripcion_eventos_idx` (`id_evento`),
   CONSTRAINT `fk_inscripcion_eventos` FOREIGN KEY (`id_evento`) REFERENCES `tbl_eventos` (`id_evento`),
   CONSTRAINT `fk_inscripcion_usuarios` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuarios` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `tbl_inscripciones` (
 
 LOCK TABLES `tbl_inscripciones` WRITE;
 /*!40000 ALTER TABLE `tbl_inscripciones` DISABLE KEYS */;
+INSERT INTO `tbl_inscripciones` VALUES (8,3,22,'qweqew','qweqwe');
 /*!40000 ALTER TABLE `tbl_inscripciones` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-23 15:23:47
+-- Dump completed on 2021-12-01 17:20:17
