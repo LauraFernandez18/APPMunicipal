@@ -26,12 +26,12 @@
         <p>Hora del evento</p>
         <input type="time" name="hora_evento" value="<?php echo $_GET['hora_evento'] ?>" >
         <br>
-        <p>Añadir imagen</p>
-        <input type="text" name="title" value="<?php echo $_GET['title'] ?>">
-        <input type="file" name="file" value="<?php echo $_GET['file'] ?>">
+        <!-- <p>Añadir imagen</p> -->
+        <!-- <input type="text" name="title" value="<?php echo $_GET['title'] ?>"> -->
+        <!-- <input type="file" name="file" value="<?php echo $_GET['file'] ?>"> -->
         <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento'] ?>">
         <br>
-        <input type="submit" value="Crear" class="btn btn-success">
+        <input type="submit" value="Modificar" class="btn btn-success">
 </div>
 </form>
 </body>

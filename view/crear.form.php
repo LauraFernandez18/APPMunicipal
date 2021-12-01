@@ -17,7 +17,7 @@
         <input type="text" name="nom_evento" id="nom_evento">
         <br>
         <p>Descripción del evento</p>
-        <input type="text" name="desc_evento" id="desc_evento">
+        <input type="text" size="30" name="desc_evento" id="desc_evento">
         <br>
         <p>Lugar del evento</p>
         <input type="text" name="lugar_evento" id="lugar_evento">

@@ -43,18 +43,12 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <td><img src="../img/ciclismo.jpg"></td>
         <?php
         echo "<td><a type='button' class='btn btn-success'  href='modificar.form.php?id={$producto['id_evento']}&nom_evento={$producto['nom_evento']}&desc_evento={$producto['desc_evento']}&lugar_evento={$producto['lugar_evento']}&fecha_evento={$producto['fecha_evento']}&hora_evento={$producto['hora_evento']}'>Modificar</a></td>";
-        echo "<td><a type='button' class='btn btn-danger' href='../processes/delete.proc.php'>Delete</a></td>";
         ?>
-    </tr>
-        <!-- <form METHOD='POST' action='inscription.principal.php'>
-            <h2><input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>></h2>
-            <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>
-            <input type='hidden' name='lugar' value=<?php echo"{$producto['lugar_evento']}";?>>
-            <input type='hidden' name='fecha' value=<?php echo"{$producto['fecha_evento']}";?>>
-            <input type='hidden' name='hora' value=<?php echo"{$producto['hora_evento']}";?>>
+        <td><form METHOD='POST' action='../processes/delete.proc.php'>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
-            <input type='submit' value='Inscribete' class="btn btn-success">
-        </form> -->
+            <input type='submit' value='Borrar' class="btn btn-danger">
+        </form></td>
+    </tr>
     <?php 
     }
      ?>

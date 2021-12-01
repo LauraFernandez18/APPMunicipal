@@ -9,8 +9,6 @@ $fecha_evento=$_POST['fecha_evento'];
 $hora_evento=$_POST['hora_evento'];
 $id_evento=$_POST['id_evento'];
 
-try {
-
     $modificar = $pdo->prepare("UPDATE tbl_eventos
     SET nom_evento = ?,desc_evento = ?,lugar_evento = ?,fecha_evento = ?,hora_evento = ?
     where id_evento= ?");
@@ -26,7 +24,3 @@ try {
 
     header('Location: ../view/pag.admin.php');
     
-}
-catch (PDOException $e) {
-    echo "Error : " . $e->getMessage();
-}
