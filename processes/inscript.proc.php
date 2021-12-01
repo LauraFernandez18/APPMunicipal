@@ -3,6 +3,8 @@
     include '../services/conexion.php';
     //si el usuario ya esta creado
     if(isset($_POST['already'])){
+        $mail=$_POST['email'];
+        $dni=$_POST['dni'];
         $sentencia=$pdo->prepare("SELECT COUNT(*) from tbl_usuarios where email_usuario= :u and  dni_usuario= :i");
         $sentencia->execute(array(":u" => $mail,":i" => $dni));
         if($sentencia->fetchColumn() < 0){
@@ -43,6 +45,7 @@
             else{
             /*------------------------------------------------------------------------------------------------------------------*/
             //preparamos la sentencia sql para poder introducir los datos de usuario y registrar nuestro nuevo usuario
+            $dbh->beginTransaction();    
             $stmt = $pdo->prepare("INSERT INTO tbl_usuarios (email_usuario, nom_usuario, apellido_usuario, telf_usuario, dni_usuario, id_perfil) VALUES (?, ?, ?, ?, ?, 2)");
              // Bind
             $stmt->bindParam(1, $mail);
