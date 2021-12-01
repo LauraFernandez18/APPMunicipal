@@ -30,10 +30,11 @@ CREATE TABLE `tbl_usuarios` (
   `apellido_usuario` varchar(45) DEFAULT NULL,
   `telf_usuario` int DEFAULT NULL,
   `id_perfil` int DEFAULT NULL,
+  `dni_usuario` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `fk_usuario_perfil_idx` (`id_perfil`),
   CONSTRAINT `fk_usuario_perfil` FOREIGN KEY (`id_perfil`) REFERENCES `tbl_perfiles` (`id_perfil`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +43,7 @@ CREATE TABLE `tbl_usuarios` (
 
 LOCK TABLES `tbl_usuarios` WRITE;
 /*!40000 ALTER TABLE `tbl_usuarios` DISABLE KEYS */;
+INSERT INTO `tbl_usuarios` VALUES (1,'Admin@gmail.com','qweQWE123','admin','admin',607043315,1,NULL),(2,'Paco@gmail.com',NULL,'Paco','Garcia',627469947,2,NULL),(21,'pepeLegend@gmail.com',NULL,'Manuel','lmao',5432343,2,'84636316M'),(22,'PaquitoXD@gmail.com',NULL,'Manin','Perez',123516634,2,'84636316M'),(23,'pepepe111111@gmail.com',NULL,'Sergio','lmao',241536617,2,'84636316M');
 /*!40000 ALTER TABLE `tbl_usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-23 15:23:47
+-- Dump completed on 2021-12-01 17:20:16
