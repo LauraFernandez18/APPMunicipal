@@ -3,6 +3,8 @@
     include '../services/conexion.php';
     //si el usuario ya esta creado
     if(isset($_POST['already'])){
+        $mail=$_POST['email'];
+        $dni=$_POST['dni'];
         $sentencia=$pdo->prepare("SELECT COUNT(*) from tbl_usuarios where email_usuario= :u and  dni_usuario= :i");
         $sentencia->execute(array(":u" => $mail,":i" => $dni));
         if($sentencia->fetchColumn() < 0){

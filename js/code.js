@@ -29,9 +29,6 @@ function inscripcion() {
     if (email == '' || nombre == '' || apellido == '' || telef == '' || dni == '') {
         mensaje.innerHTML = "Introduce todos los campos"
         return false
-    } else if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i) {
-        mensaje.innerHTML = "email incorrecto"
-        return false;
     } else if (!(/^\d{9}$/.test(telef))) {
         mensaje.innerHTML = "telf incorrecto"
         return false;

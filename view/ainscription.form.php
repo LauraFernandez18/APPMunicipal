@@ -16,22 +16,12 @@
         <form METHOD='POST' action='../processes/inscript.proc.php' onsubmit="return inscripcion()">
             <p>Email</p>
             <input type='email' name='email' id='email'>
-            <p>Nombre</p>
-            <input type='text' name='nombre' id='nombre'>
-            <p>Apellido</p>
-            <input type='text' name='apellido' id='apellido'>
-            <p>Teléfono</p>
-            <input type='number' name='telef' id='telef'>
             <p>DNI</p>
             <input type='text' name='dni' id='dni'>
             <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
+            <input type='hidden' name='already' value=already>
             <br></br> 
             <input type='submit' value='Completar inscripcion' class="btn btn-success">
-        </form>
-        <form METHOD='POST' action='ainscription.form.php'>
-        <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
-        <br>
-        <input type='submit' value='Ya estoy registrado' class="btn btn-success">
         </form>
 </div>
 </body>

@@ -1,11 +1,6 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap');
 * {
     box-sizing: border-box;
-}
-
-body {
-    background-color: rgb(183, 224, 235) !important;
 }
 
 html,
@@ -17,6 +12,10 @@ body,
 
 
 /*-------PAGINA PRINCIPAL----------- */
+
+.pag_principal {
+    width: 100%;
+}
 
 .pag_principal h1 {
     text-align: center;
@@ -32,39 +31,17 @@ body,
     padding: 1%;
 }
 
-.seccion {
-    background-color: rgb(204, 204, 245);
-    float: left;
-    border-radius: 3px;
-    margin: 1%;
-    text-align: left;
-    width: 48%;
-    height: 30%;
-    padding-left: 1%;
+.evento {
+    width: 100%;
 }
 
-.column1 {
-    width: 30%;
-    float: left;
-}
-
-.column2 {
-    width: 70%;
-    float: left;
+.evento img {
+    width: 10%;
 }
 
 .row {
     padding-left: 3%;
     padding-right: 3%;
-}
-
-.pag_principal h2 {
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
-.pag_principal img {
-    width: 90%;
 }
 
 
