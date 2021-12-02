@@ -17,7 +17,7 @@
         <input type="text" name="nom_evento" id="nom_evento">
         <br>
         <p>Descripción del evento</p>
-        <input type="text" size="30" name="desc_evento" id="desc_evento">
+        <textarea type="text" rows="5" cols="50" name="desc_evento" id="desc_evento"></textarea>
         <br>
         <p>Lugar del evento</p>
         <input type="text" name="lugar_evento" id="lugar_evento">
@@ -31,7 +31,7 @@
         <!-- <p>Añadir imagen</p> -->
         <!-- <input type="text" name="title" id="">-->
         <!-- <input type="file" name="file" id=""> -->
-        <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento'] ?>"> -->
+        <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento'] ?>">
         <br>
         <input type="submit" value="Crear" class="btn btn-success">
 </div>

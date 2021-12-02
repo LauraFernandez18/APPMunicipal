@@ -26,12 +26,12 @@
             <input type='text' name='dni' id='dni'>
             <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
             <br></br> 
-            <input type='submit' value='Completar inscripcion' class="btn btn-success">
+            <input type='submit' value='Completar inscripcion' class="btn btn-dark">
         </form>
         <form METHOD='POST' action='ainscription.form.php'>
         <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
         <br>
-        <input type='submit' value='Ya estoy registrado' class="btn btn-success">
+        <input type='submit' value='Ya estoy registrado' class="btn btn-dark">
         </form>
 </div>
 </body>

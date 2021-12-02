@@ -15,7 +15,7 @@
         <input type="text" name="nom_evento" value="<?php echo $_GET['nom_evento'] ?>">
         <br>
         <p>Descripción del evento</p>
-        <input type="text" name="desc_evento" value="<?php echo $_GET['desc_evento'] ?>">
+        <textarea type="text" rows="5" cols="50" name="desc_evento" id="desc_evento" ><?php echo $_GET['desc_evento'] ?></textarea>
         <br>
         <p>Lugar del evento</p>
         <input type="text" name="lugar_evento" value="<?php echo $_GET['lugar_evento'] ?>">

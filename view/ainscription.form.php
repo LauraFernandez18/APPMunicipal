@@ -21,7 +21,7 @@
             <input type='hidden' name='id' value=<?php if(isset($_GET['id'])){echo"{$_GET['id']}";}else{echo"{$_POST['id']}";}?>>
             <input type='hidden' name='already' value=already>
             <br></br> 
-            <input type='submit' value='Completar inscripcion' class="btn btn-success">
+            <input type='submit' value='Completar inscripcion' class="btn btn-dark">
         </form>
 </div>
 </body>

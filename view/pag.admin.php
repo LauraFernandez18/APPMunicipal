@@ -14,9 +14,8 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Eventos disponibles</title>
 </head>
-<body>
-<div class="row">
-<div class="pag_principal">
+<body class="cuerpo">
+<div class="pag_admin">
 <h1>Administración de eventos</h1>
 <td><a type='button' class='btn btn-primary'  href="crear.form.php">Crear</a></td>
 <br></br>
@@ -53,7 +52,6 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
     }
      ?>
      </table>
-</div>
 </div>
 </body>
 </html>
