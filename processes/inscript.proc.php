@@ -12,6 +12,19 @@
             echo "<script> alert('No se encuentra ninguna cuenta asociada')</script>";
             echo"<script>window.location.replace('../view/ainscription.form.php?id=".$idEvent."')</script>";
         }else{
+            //comprobamos que el usuario no se ha registrado previamente creando un duplicado
+            $sentencia = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE email_usuario like ?");
+            $sentencia->bindParam(1, $mail);
+            $sentencia->execute();
+            $idUsu = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            $finalid=$idUsu[0]['id_usuario'];
+            //ejecutamos la query que compueba que el usuario no estaba previamente registrado
+            $comp=$pdo->prepare("SELECT COUNT(*) from tbl_inscripciones where id_evento= :u and id_usuario= :i ");
+            $comp->execute(array(":u" => $idEvent,":i" => $finalid));
+            if($comp->fetchColumn() > 0){
+                echo "<script> alert('Usted ya esta registrado')</script>";
+                echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+            }
             //preparamos todas las queries para comprobar si hemos rebasado el maximo de integrantes en un evento
             $sentencia=$pdo->prepare("SELECT COUNT(*) from tbl_inscripciones where id_evento= :u");
             $sentencia->execute(array(":u" => $idEvent,));
