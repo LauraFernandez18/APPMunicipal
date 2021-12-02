@@ -28,10 +28,10 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <h2><?php echo"{$producto['nom_evento']}";?></h2>
         <hr>
         <p><?php echo"{$producto['desc_evento']}";?></p>
-        <p><?php echo"{$producto['lugar_evento']}";?><p>
-        <p><?php echo"{$producto['fecha_evento']}";?><p>
-        <p><?php echo"{$producto['hora_evento']}";?><p>
-        <p><?php echo"{$producto['max_evento']}";?><p>
+        <p><b>Ubicación: </b><?php echo"{$producto['lugar_evento']}";?><p>
+        <p><b>Fecha: </b><?php echo"{$producto['fecha_evento']}";?><p>
+        <p><b>Hora: </b><?php echo"{$producto['hora_evento']}";?><p>
+        <p><b>Máximo participantes: </b><?php echo"{$producto['max_evento']}";?><p>
         <form METHOD='POST' action='inscription.principal.php'>
             <input type='hidden' name='nom' value=<?php echo"{$producto['nom_evento']}";?>>
             <input type='hidden' name='desc' value=<?php echo"{$producto['desc_evento']}";?>>

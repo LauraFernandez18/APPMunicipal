@@ -17,7 +17,7 @@
         <input type="text" name="nom_evento" id="nom_evento">
         <br>
         <p>Descripción del evento</p>
-        <textarea type="text" rows="3" cols="50" name="desc_evento" id="desc_evento"></textarea>
+        <textarea type="text" rows="3" cols="50" maxlength="48" name="desc_evento" id="desc_evento"></textarea>
         <br>
         <p>Lugar del evento</p>
         <input type="text" name="lugar_evento" id="lugar_evento">
