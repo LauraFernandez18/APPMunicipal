@@ -1,7 +1,7 @@
 <?php
 include '../services/config.php';
 include '../services/conexion.php';
-$idEvent=$_POST['id'];
+if(isset($_GET['id'])){$idEvent=$_GET['id'];}else{$idEvent=$_POST['id'];}
 $sentencia=$pdo->prepare("SELECT * FROM tbl_usuarios
 inner join tbl_inscripciones
 on tbl_usuarios.id_usuario=tbl_inscripciones.id_usuario
@@ -41,8 +41,9 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <td><?php echo"{$producto['apellido_usuario']}";?></td>
         <td><?php echo"{$producto['telf_usuario']}";?></td>
         <td><?php echo"{$producto['dni_usuario']}";?></td>
-        <td><form METHOD='POST' action='../processes/delete.user.proc.php'>
+        <td><form METHOD='POST' action='../processes/delete2.proc.php'>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_usuario']}";?>>
+            <input type='hidden' name='idE' value=<?php echo $idEvent;?>>
             <input type='submit' value='Borrar' class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario del evento?')">
         </form></td>
     </tr>
