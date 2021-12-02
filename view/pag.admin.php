@@ -46,7 +46,7 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         ?>
         <td><form METHOD='POST' action='../processes/delete.proc.php'>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
-            <input type='submit' value='Borrar' class="btn btn-danger">
+            <input type='submit' value='Borrar' class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este evento?')">
         </form></td>
     </tr>
     <?php 
