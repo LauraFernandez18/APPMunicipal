@@ -22,7 +22,7 @@
             $comp=$pdo->prepare("SELECT COUNT(*) from tbl_inscripciones where id_evento= :u and id_usuario= :i ");
             $comp->execute(array(":u" => $idEvent,":i" => $finalid));
             if($comp->fetchColumn() > 0){
-                echo "<script> alert('Usted ya esta registrado')</script>";
+                echo "<script> alert('Usted ya esta registrado a este evento')</script>";
                 echo"<script>window.location.replace('../view/pag.principal.php')</script>";
             }
             //preparamos todas las queries para comprobar si hemos rebasado el maximo de integrantes en un evento
