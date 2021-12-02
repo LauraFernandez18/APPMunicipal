@@ -16,6 +16,7 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
 </head>
 <body class="cuerpo">
 <div class="pag_admin">
+<a href='../processes/logout.proc.php' class='logout'>Logout</a>
 <h1>Administración de eventos</h1>
 <td><a type='button' class='btn btn-primary'  href="crear.form.php">Crear</a></td>
 <br></br>

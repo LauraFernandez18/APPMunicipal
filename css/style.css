@@ -11,6 +11,14 @@ body,
 }
 
 
+/* background de login, crear, modificar, admin */
+
+.cuerpo {
+    background-image: url("../img/fondo2.jpg");
+    background-size: 100%;
+}
+
+
 /*-------PAGINA PRINCIPAL----------- */
 
 .pagina_principal h1 {
@@ -19,6 +27,9 @@ body,
     width: 100%;
     padding: 2%;
 }
+
+
+/* editar el div de iniciar sesión */
 
 .iniciar_sesion {
     text-align: right;
@@ -29,23 +40,15 @@ body,
     color: white;
 }
 
+
+/* botón de iniciar sesión */
+
 .inicio {
     color: white;
 }
 
-hr {
-    background-color: grey;
-    margin-left: 0px;
-    width: 30%;
-}
 
-.seccion {
-    float: left;
-    text-align: left;
-    width: 31.3%;
-    margin: 1%;
-    margin-bottom: 3%;
-}
+/* estilos para la página */
 
 .pagina_principal h2 {
     padding-top: 3%;
@@ -58,7 +61,30 @@ hr {
 }
 
 
+/* secciones(cada uno de los eventos) */
+
+.seccion {
+    float: left;
+    text-align: left;
+    width: 31.3%;
+    margin: 1%;
+    margin-bottom: 3%;
+}
+
+
+/* línea que hay debajo del título en seccion */
+
+hr {
+    background-color: grey;
+    margin-left: 0px;
+    width: 30%;
+}
+
+
 /*----------------LOGIN---------------*/
+
+
+/* caja login */
 
 .login {
     position: absolute;
@@ -73,13 +99,8 @@ hr {
     box-shadow: 2px 2px 10px #666;
 }
 
-.cuerpo {
-    background-image: url("../img/fondo2.jpg");
-    background-size: 100%;
-}
 
-
-/* texto login */
+/* titulo login */
 
 .login h1 {
     color: #949494;
@@ -90,7 +111,7 @@ hr {
 }
 
 
-/* cajas login */
+/* estilos para inputs */
 
 .login input[name='email_usuario'],
 .login input[name='pass_usuario'] {
@@ -120,11 +141,37 @@ hr {
 #mensaje {
     color: rgb(124, 123, 123);
     font-family: 'Zen Antique', serif;
-    font-size: 15px;
+    font-size: 2vh;
 }
 
 
-/* PAGINA ADMIN */
+/* -------PAGINA ADMIN--------- */
+
+.logout {
+    position: center;
+    text-align: right;
+    margin-left: 95%;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.pag_admin h1 {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    padding: 2%;
+}
+
+.pag_admin {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+/* estilos de la tabla */
 
 .table {
     width: 80%;
@@ -145,20 +192,8 @@ hr {
     cursor: pointer;
 }
 
-.pag_admin h1 {
-    text-align: center;
-    font-family: 'Roboto Slab', serif;
-    width: 100%;
-    padding: 2%;
-}
 
-.pag_admin {
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-
-/*---------------------INSCRIPCION--------------------*/
+/*---------------------INSCRIPCION, MODIFICAR, CREAR--------------------*/
 
 .caja {
     position: absolute;
@@ -173,6 +208,9 @@ hr {
     box-shadow: 2px 2px 10px #666;
 }
 
+
+/* estilo para inputs */
+
 .caja input[name='email'],
 .caja input[name='nombre'],
 .caja input[name='apellido'],
@@ -183,7 +221,7 @@ hr {
 .caja input[name='fecha_evento'],
 .caja input[name='hora_evento'] {
     width: 100%;
-    line-height: 2.5em;
+    line-height: 1.5em;
     font-family: 'Zen Antique', serif;
     border-radius: 3px;
     background-color: rgb(243, 242, 242);
@@ -191,13 +229,13 @@ hr {
     font-size: 15px;
 }
 
-.textarea {
-    line-height: 2.5em;
+#desc_evento {
     font-family: 'Zen Antique', serif;
-    width: 100%;
-    border: 2px solid rgb(243, 242, 242);
     font-size: 15px;
 }
+
+
+/* estilos para el texto */
 
 .caja h2 {
     text-align: center;
@@ -205,11 +243,12 @@ hr {
     color: rgb(83, 82, 82);
     font-weight: bolder;
     padding-bottom: 6px;
+    font-size: 4vh;
 }
 
 .caja p {
-    font-size: 20px;
+    font-size: 2.3vh;
     font-family: 'Zen Antique', serif;
     color: rgb(83, 82, 82);
-    padding-top: 7px
+    padding-top: 10px;
 }

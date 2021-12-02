@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Crear evento</title>
 </head>
-<body>
+<body class="cuerpo">
 <form action="../processes/crear.proc.php" method="post" class="caja" enctype="multipart/form-data" onsubmit="return evento();">
         <h2>Crear evento</h2>
         <div class=alert id='mensaje'></div>
@@ -17,7 +17,7 @@
         <input type="text" name="nom_evento" id="nom_evento">
         <br>
         <p>Descripción del evento</p>
-        <textarea type="text" rows="5" cols="50" name="desc_evento" id="desc_evento"></textarea>
+        <textarea type="text" rows="3" cols="50" name="desc_evento" id="desc_evento"></textarea>
         <br>
         <p>Lugar del evento</p>
         <input type="text" name="lugar_evento" id="lugar_evento">
