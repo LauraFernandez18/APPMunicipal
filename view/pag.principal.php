@@ -24,7 +24,7 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
     foreach ($eventos as $producto){
         ?>
         <div class="seccion">
-        <img src="../img/fiesta.jpg">
+        <img <?php echo"{$producto['foto_evento']}";?>>
         <h2><?php echo"{$producto['nom_evento']}";?></h2>
         <hr>
         <p><?php echo"{$producto['desc_evento']}";?></p>

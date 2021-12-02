@@ -33,8 +33,14 @@ if(!(isset($_SESSION['email_usuario']))){
         <input type="date" name="fecha_evento" id="fecha_evento" value="<?php echo $_GET['fecha_evento'] ?>">
         <br>
         <p>Hora del evento</p>
-        <input type="time" name="hora_evento" id="hora_evento" value="<?php echo $_GET['hora_evento'] ?>" >
+        <input type="time" name="hora_evento" id="hora_evento" value="<?php echo $_GET['hora_evento'] ?>">
         <br>
+        <p>Maximo de participantes</p>
+        <input type="num" name="max_evento" id="max_evento" value="<?php echo $_GET['max_evento'] ?>">
+        <br>
+        <p>Añadir imagen</p>
+        <input type="text" name="title" id="title">
+        <input type="file" name="foto_evento" id="foto_evento">
         <input type="hidden" name="id_evento" value="<?php echo $_GET['id'] ?>">
         <br>
         <input type="submit" value="Modificar" class="btn btn-success">

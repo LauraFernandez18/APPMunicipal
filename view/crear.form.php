@@ -29,11 +29,11 @@
         <input type="time" name="hora_evento" id="hora_evento">
         <br>
         <p>Maximo de participantes</p>
-        <input type="num" name="max_evento" id="hora_evento">
+        <input type="num" name="max_evento" id="max_evento">
         <br>
-        <!-- <p>Añadir imagen</p> -->
-        <!-- <input type="text" name="title" id="">-->
-        <!-- <input type="file" name="file" id=""> -->
+        <p>Añadir imagen</p>
+        <input type="text" name="title" id="title">
+        <input type="file" name="foto_evento" id="foto_evento">
         <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento'] ?>">
         <br>
         <input type="submit" value="Crear" class="btn btn-success">
