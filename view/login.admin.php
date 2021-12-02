@@ -10,7 +10,7 @@
     <title>Login</title>
 </head>
 
-<body>
+<body class="cuerpo">
 <div class="body_login">
     <div class="login">
         <h1>Admin panel</h1><br>
