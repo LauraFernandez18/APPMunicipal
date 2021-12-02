@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!(isset($_SESSION['email_usuario']))){
+    session_destroy();
+    echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
