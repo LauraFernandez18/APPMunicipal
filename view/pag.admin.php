@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!(isset($_SESSION['email_usuario']))){
+    session_destroy();
+    echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+}
 include '../services/config.php';
 include '../services/conexion.php';
 $sentencia=$pdo->prepare("SELECT * FROM tbl_eventos");
@@ -26,8 +31,10 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
                     <th>Lugar evento</th>
                     <th>Fecha evento</th>
                     <th>Hora evento</th>
+                    <th>Aforo</th>
                     <th>Imagen</th>
                     <th>Modificar</th>
+                    <th>Participantes</th>
                     <th>Eliminar</th>
                 </tr>
 <?php
@@ -39,10 +46,15 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <td><?php echo"{$producto['lugar_evento']}";?></td>
         <td><?php echo"{$producto['fecha_evento']}";?></td>
         <td><?php echo"{$producto['hora_evento']}";?></td>
+        <td><?php echo"{$producto['max_evento']}";?></td>
         <td><img src="../img/ciclismo.jpg"></td>
         <?php
         echo "<td><a type='button' class='btn btn-success'  href='modificar.form.php?id={$producto['id_evento']}&nom_evento={$producto['nom_evento']}&desc_evento={$producto['desc_evento']}&lugar_evento={$producto['lugar_evento']}&fecha_evento={$producto['fecha_evento']}&hora_evento={$producto['hora_evento']}'>Modificar</a></td>";
         ?>
+        <td><form METHOD='POST' action='registered.admin.php'>
+            <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
+            <input type='submit' value='Registrados' class="btn btn-warning">
+        </form></td>
         <td><form METHOD='POST' action='../processes/delete.proc.php'>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>
             <input type='submit' value='Borrar' class="btn btn-danger">

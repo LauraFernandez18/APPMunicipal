@@ -28,6 +28,9 @@
         <p>Hora del evento</p>
         <input type="time" name="hora_evento" id="hora_evento">
         <br>
+        <p>Maximo de participantes</p>
+        <input type="num" name="max_evento" id="hora_evento">
+        <br>
         <!-- <p>Añadir imagen</p> -->
         <!-- <input type="text" name="title" id="">-->
         <!-- <input type="file" name="file" id=""> -->
