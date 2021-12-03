@@ -82,7 +82,8 @@
                 echo"<script>window.location.replace('../view/pag.principal.php')</script>";
             }else{
                 //------------------------------------------------------------------------------------------------------------------/
-                //preparamos la sentencia sql para poder introducir los datos de usuario y registrar nuestro nuevo usuarios    
+                //preparamos la sentencia sql para poder introducir los datos de usuario y registrar nuestro nuevo usuarios  
+                $pdo->beginTransaction();  
                 $stmt = $pdo->prepare("INSERT INTO tbl_usuarios (email_usuario, nom_usuario, apellido_usuario, telf_usuario, dni_usuario, id_perfil) VALUES (?, ?, ?, ?, ?, 2)");
                  // Bind
                  $stmt->bindParam(1, $mail);
@@ -90,8 +91,16 @@
                 $stmt->bindParam(3, $_POST['apellido']);
                 $stmt->bindParam(4, $_POST['telef']);
                 $stmt->bindParam(5, $_POST['dni']);
+                try{
                 // Excecute
                 $stmt->execute();
+                $pdo->commit();
+                }catch(PDOException $e){
+                    echo $e->getMessage();
+                    $pdo->rollBack();
+                    echo "<script> alert('ERROR')</script>";
+                    echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+                }
                 //------------------------------------------------------------------------------------------------------------------//
                 //recogemos el id del usuario previamente creado
                 $sentencia = $pdo->prepare("SELECT * FROM tbl_usuarios WHERE email_usuario like ?");
@@ -101,13 +110,22 @@
                  //Leer variable con los datos
                  //$arrDatos[0]['id_usuario'];
                 //registramos al usuario en el evento
+                $pdo->beginTransaction(); 
                 $event = $pdo->prepare("INSERT INTO tbl_inscripciones (id_evento, id_usuario, fecha_inscripcion, hora_inscripcion) VALUES (?, ?, CURDATE(),CURTIME())");
                  // Bind
                  $event->bindParam(1, $idEvent);
 
                 $event->bindParam(2, $arrDatos[0]['id_usuario']);
                 // Excecute
-                $event->execute();
+                try{
+                    $event->execute();
+                    $pdo->commit();
+                    }catch(PDOException $e){
+                        echo $e->getMessage();
+                        $pdo->rollBack();
+                        echo "<script> alert('ERROR')</script>";
+                        echo"<script>window.location.replace('../view/pag.principal.php')</script>";
+                    }
                 //nos envia a de nuevo a la pagina principal 
                 echo "<script> alert('Registro completado')</script>";
                 echo"<script>window.location.replace('../view/pag.principal.php')</script>";
