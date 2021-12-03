@@ -17,7 +17,7 @@ if(!(isset($_SESSION['email_usuario']))){
     <title>Crear evento</title>
 </head>
 <body class="cuerpo">
-<form action="../processes/modificar.proc.php" method="post" class="caja" enctype="multipart/form-data" onsubmit="return evento();">
+<form action="../processes/modificar.proc.php" method="post" class="caja_crear_modificar" enctype="multipart/form-data" onsubmit="return evento();">
         <h2>Modificar evento</h2>
         <div class=alert id='mensaje'></div>
         <p>Nombre del evento</p>
@@ -39,8 +39,7 @@ if(!(isset($_SESSION['email_usuario']))){
         <input type="num" name="max_evento" id="max_evento" value="<?php echo $_GET['max_evento'] ?>">
         <br>
         <p>Añadir imagen</p>
-        <input type="text" name="title" id="title">
-        <input type="file" name="foto_evento" id="foto_evento">
+        <input type="file" name="foto_evento" id="foto_evento" value="<?php echo $_FILES['foto_evento'] ?>">
         <input type="hidden" name="id_evento" value="<?php echo $_GET['id'] ?>">
         <br>
         <input type="submit" value="Modificar" class="btn btn-success">

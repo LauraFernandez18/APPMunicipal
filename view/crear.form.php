@@ -10,7 +10,7 @@
     <title>Crear evento</title>
 </head>
 <body class="cuerpo">
-<form action="../processes/crear.proc.php" method="post" class="caja" enctype="multipart/form-data" onsubmit="return evento();">
+<form action="../processes/crear.proc.php" method="post" class="caja_crear_modificar"  enctype="multipart/form-data" onsubmit="return evento();">
         <h2>Crear evento</h2>
         <div class=alert id='mensaje'></div>
         <p>Nombre del evento</p>
@@ -34,7 +34,7 @@
         <p>Añadir imagen</p>
         <input type="text" name="title" id="title">
         <input type="file" name="foto_evento" id="foto_evento">
-        <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento'] ?>">
+        <input type="hidden" name="id_evento" value="<?php echo $_GET['id_evento']?>">
         <br>
         <input type="submit" value="Crear" class="btn btn-success">
 </div>

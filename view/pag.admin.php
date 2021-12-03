@@ -48,9 +48,9 @@ $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);?>
         <td><?php echo"{$producto['fecha_evento']}";?></td>
         <td><?php echo"{$producto['hora_evento']}";?></td>
         <td><?php echo"{$producto['max_evento']}";?></td>
-        <td><img src="../img/ciclismo.jpg"></td>
+        <td><img src="../img/<?php echo "{$producto['foto_evento']}";?>"></td>
         <?php
-        echo "<td><a type='button' class='btn btn-success'  href='modificar.form.php?id={$producto['id_evento']}&nom_evento={$producto['nom_evento']}&desc_evento={$producto['desc_evento']}&lugar_evento={$producto['lugar_evento']}&fecha_evento={$producto['fecha_evento']}&hora_evento={$producto['hora_evento']}'>Modificar</a></td>";
+        echo "<td><a type='button' class='btn btn-success'  href='modificar.form.php?id={$producto['id_evento']}&nom_evento={$producto['nom_evento']}&desc_evento={$producto['desc_evento']}&lugar_evento={$producto['lugar_evento']}&fecha_evento={$producto['fecha_evento']}&hora_evento={$producto['hora_evento']}&max_evento={$producto['max_evento']}&foto_evento={$producto['foto_evento']}'>Modificar</a></td>";
         ?>
         <td><form METHOD='POST' action='registered.admin.php'>
             <input type='hidden' name='id' value=<?php echo"{$producto['id_evento']}";?>>

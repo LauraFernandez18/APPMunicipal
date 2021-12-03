@@ -49,9 +49,11 @@ function evento() {
     lugar_evento = document.getElementById('lugar_evento').value
     fecha_evento = document.getElementById('fecha_evento').value
     hora_evento = document.getElementById('hora_evento').value
+    max_evento = document.getElementById('max_evento').value
+    foto_evento = document.getElementById('foto_evento').value
     mensaje = document.getElementById('mensaje')
 
-    if (nom_evento == '' || desc_evento == '' || lugar_evento == '' || fecha_evento == '' || hora_evento == '') {
+    if (nom_evento == '' || desc_evento == '' || lugar_evento == '' || fecha_evento == '' || hora_evento == '' || max_evento == '' || foto_evento == '') {
         mensaje.innerHTML = 'Rellena todos los campos'
         return false
     } else {
